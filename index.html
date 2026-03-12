@@ -622,23 +622,6 @@
           <div class="field-label">Número de Orders</div>
           <input type="number" class="field-input" id="orders-input" value="10" min="1" max="999" />
         </div>
-
-        <div class="field-group">
-          <div class="field-label">Modo Headless</div>
-          <div class="toggle-row">
-            <span class="toggle-label">Sin ventana del navegador</span>
-            <label class="toggle">
-              <input type="checkbox" id="headless-toggle" checked />
-              <div class="toggle-track"></div>
-              <div class="toggle-thumb"></div>
-            </label>
-          </div>
-        </div>
-
-        <div class="field-group">
-          <div class="field-label">Delay entre pedidos (seg)</div>
-          <input type="number" class="field-input" id="delay-input" placeholder="Opcional" min="0" />
-        </div>
       </div>
 
       <!--
@@ -792,8 +775,7 @@ async function launchBot() {
   if (!selectedBot) return;
 
   const orders = parseInt(document.getElementById('orders-input').value) || 10;
-  const headless = document.getElementById('headless-toggle').checked;
-  const delay = document.getElementById('delay-input').value;
+  const headless = true;
 
   // Collect extra params
   const extra = EXTRA_PARAMS[selectedBot] || [];
@@ -802,7 +784,6 @@ async function launchBot() {
     const val = document.getElementById(`extra-${p.key}`)?.value;
     if (val) extraParams[p.key] = val;
   });
-  if (delay) extraParams['delay'] = delay;
 
   const btn = document.getElementById('launch-btn');
   btn.disabled = true;
