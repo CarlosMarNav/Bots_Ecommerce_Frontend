@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/types.ts","./src/components/appheader.tsx","./src/components/botgrid.tsx","./src/components/launchpanel.tsx","./src/components/runsidebar.tsx","./src/components/terminalview.tsx","./src/components/toastcontainer.tsx"],"version":"5.9.3"}
